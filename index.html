@@ -6,10 +6,10 @@
     <meta
       id="meta-description"
       name="description"
-      content="选择银行并进入开户链接"
+      content="选择开户银行，进入广发证券开户注册页面"
     />
     <meta name="color-scheme" content="light" />
-    <meta name="theme-color" content="#28181a" />
+    <meta name="theme-color" content="#202124" />
     <title>选择开户银行</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
@@ -18,15 +18,20 @@
   <body>
     <main class="app-shell">
       <header class="hero" aria-labelledby="page-title">
-        <p id="page-label" class="page-label">开启投资账户</p>
-        <h1 id="page-title">选择开户银行</h1>
+        <div class="hero-content">
+          <p id="page-label" class="brand-lockup">
+            <span class="brand-rule" aria-hidden="true"></span>
+            <span id="page-label-text">广发证券开户服务</span>
+          </p>
 
-        <div class="growth-mark" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+          <div class="hero-copy">
+            <h1 id="page-title">选择开户银行</h1>
+            <p id="page-description" class="page-description">
+              选择银行后，将进入广发证券开户注册页面
+            </p>
+          </div>
         </div>
+
       </header>
 
       <section class="bank-picker" aria-labelledby="bank-picker-title">
@@ -37,13 +42,23 @@
           <li class="skeleton" aria-hidden="true"></li>
           <li class="skeleton" aria-hidden="true"></li>
           <li class="skeleton" aria-hidden="true"></li>
+          <li class="skeleton" aria-hidden="true"></li>
+          <li class="skeleton" aria-hidden="true"></li>
+          <li class="skeleton" aria-hidden="true"></li>
+          <li class="skeleton" aria-hidden="true"></li>
+          <li class="skeleton" aria-hidden="true"></li>
+          <li class="skeleton" aria-hidden="true"></li>
+          <li class="skeleton" aria-hidden="true"></li>
         </ul>
 
         <div id="empty-state" class="state-message" role="status" hidden>
           暂无可选银行
         </div>
+
         <div id="error-state" class="state-message state-message--error" role="alert" hidden>
-          页面加载失败，请稍后重试
+          <strong>银行列表加载失败</strong>
+          <span>请检查网络后重新加载</span>
+          <button id="retry-button" class="retry-button" type="button">重新加载</button>
         </div>
       </section>
     </main>

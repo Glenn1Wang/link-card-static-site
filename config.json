@@ -1,14 +1,15 @@
 {
   "page": {
     "title": "选择开户银行",
-    "label": "开启投资账户"
+    "label": "广发证券开户服务",
+    "description": "选择银行后，将进入广发证券开户注册页面"
   },
   "theme": {
     "accent": "#f04438"
   },
   "links": [
     {
-      "name": "工商银行",
+      "name": "中国工商银行",
       "url": "https://hd.gf.com.cn/kaihu/reservation/index.html?busiType=qrcode&ownerType=union&channel=unionicbc&managerPhone=18224019744&recommendNo=3601599&domain=zzkh.gf.com.cn",
       "newTab": false
     },
@@ -23,12 +24,12 @@
       "newTab": false
     },
     {
-      "name": "建设银行",
+      "name": "中国建设银行",
       "url": "https://hd.gf.com.cn/kaihu/reservation/index.html?busiType=qrcode&ownerType=union&channel=unionccb&managerPhone=13997288166&recommendNo=3601599&domain=zzkh.gf.com.cn",
       "newTab": false
     },
     {
-      "name": "农业银行",
+      "name": "中国农业银行",
       "url": "https://hd.gf.com.cn/kaihu/reservation/index.html?busiType=qrcode&ownerType=union&channel=unionabc&managerPhone=18189865992&recommendNo=3601599&domain=zzkh.gf.com.cn",
       "newTab": false
     },
@@ -38,7 +39,7 @@
       "newTab": false
     },
     {
-      "name": "邮储银行",
+      "name": "邮政储蓄银行",
       "url": "https://hd.gf.com.cn/kaihu/reservation/index.html?busiType=qrcode&ownerType=union&channel=unionpsbc&managerPhone=19102657602&recommendNo=3601599&domain=zzkh.gf.com.cn",
       "newTab": false
     },
