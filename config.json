@@ -31,6 +31,31 @@
       "name": "农业银行",
       "url": "https://hd.gf.com.cn/kaihu/reservation/index.html?busiType=qrcode&ownerType=union&channel=unionabc&managerPhone=18189865992&recommendNo=3601599&domain=zzkh.gf.com.cn",
       "newTab": false
+    },
+    {
+      "name": "招商银行",
+      "url": "https://hd.gf.com.cn/kaihu/reservation/index.html?busiType=qrcode&ownerType=union&channel=unioncmb&managerPhone=13519782638&recommendNo=3601599&domain=zzkh.gf.com.cn",
+      "newTab": false
+    },
+    {
+      "name": "邮储银行",
+      "url": "https://hd.gf.com.cn/kaihu/reservation/index.html?busiType=qrcode&ownerType=union&channel=unionpsbc&managerPhone=19102657602&recommendNo=3601599&domain=zzkh.gf.com.cn",
+      "newTab": false
+    },
+    {
+      "name": "光大银行",
+      "url": "https://hd.gf.com.cn/kaihu/reservation/index.html?busiType=qrcode&ownerType=union&channel=unionpbc&managerPhone=18867809814&recommendNo=3601599&domain=zzkh.gf.com.cn",
+      "newTab": false
+    },
+    {
+      "name": "兴业银行",
+      "url": "https://hd.gf.com.cn/kaihu/reservation/index.html?busiType=qrcode&ownerType=union&channel=unioncib&managerPhone=18697157576&recommendNo=3601599&domain=zzkh.gf.com.cn",
+      "newTab": false
+    },
+    {
+      "name": "上海银行",
+      "url": "https://hd.gf.com.cn/kaihu/reservation/index.html?busiType=qrcode&ownerType=union&channel=unionbos&managerPhone=15928822669&recommendNo=3070629&domain=zzkh.gf.com.cn",
+      "newTab": false
     }
   ]
 }
