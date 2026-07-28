@@ -1,0 +1,43 @@
+{
+  "page": {
+    "title": "银行开户链接",
+    "eyebrow": "BANK ACCESS · 专属服务",
+    "description": "选择您希望办理业务的银行，进入对应的专属邀请页面。",
+    "sectionTitle": "选择开户银行",
+    "adviser": {
+      "label": "服务顾问",
+      "name": "请填写您的姓名",
+      "title": "证券从业人员"
+    },
+    "noticeTitle": "开户提示",
+    "notice": "跳转前请确认目标页面域名及开户信息，具体服务与费率以银行官方页面为准。",
+    "footer": "本页面仅提供开户链接导航，不收集或保存您的个人信息。"
+  },
+  "theme": {
+    "accent": "#9a4638"
+  },
+  "links": [
+    {
+      "name": "示例银行一",
+      "description": "请替换为实际银行名称与邀请说明",
+      "url": "https://example.com/bank-one",
+      "badge": "推荐",
+      "newTab": true,
+      "enabled": true
+    },
+    {
+      "name": "示例银行二",
+      "description": "请将链接替换为您的专属开户链接",
+      "url": "https://example.com/bank-two",
+      "newTab": true,
+      "enabled": true
+    },
+    {
+      "name": "示例银行三",
+      "description": "暂未开放的银行也可以保留展示",
+      "url": "",
+      "badge": "暂未开放",
+      "enabled": false
+    }
+  ]
+}

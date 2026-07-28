@@ -1,0 +1,461 @@
+:root {
+  color-scheme: light;
+  --canvas: #e9e6dd;
+  --paper: #f8f6f0;
+  --paper-deep: #f0ede5;
+  --ink: #17302d;
+  --muted: #65716d;
+  --line: rgba(23, 48, 45, 0.16);
+  --line-strong: rgba(23, 48, 45, 0.38);
+  --accent: #9a4638;
+  --accent-soft: color-mix(in srgb, var(--accent) 13%, var(--paper));
+  --error: #8a3028;
+  --focus: color-mix(in srgb, var(--accent) 82%, #ffffff);
+  --shadow: 0 1.5rem 4rem rgba(23, 48, 45, 0.1);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 20rem;
+  background: var(--canvas);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(23, 48, 45, 0.035) 1px, transparent 1px),
+    var(--canvas);
+  background-size: 4rem 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page-shell {
+  width: min(100%, 42rem);
+  min-height: 100vh;
+  margin-inline: auto;
+  padding: 2rem 1.25rem 1.5rem;
+  background: var(--paper);
+}
+
+.masthead {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.brand-line {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 2rem;
+}
+
+.brand-mark {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  color: var(--paper);
+  background: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 9ch;
+  margin-bottom: 0.875rem;
+  font-family: "Songti SC", STSong, SimSun, serif;
+  font-size: clamp(2.5rem, 12vw, 4.75rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.intro {
+  max-width: 29rem;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.adviser-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 0.875rem 1rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+}
+
+.adviser-label {
+  flex: 0 0 auto;
+  padding-right: 1rem;
+  color: var(--accent);
+  border-right: 1px solid var(--line-strong);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.adviser-copy {
+  display: grid;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.adviser-copy strong {
+  overflow: hidden;
+  font-family: "Songti SC", STSong, SimSun, serif;
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.adviser-copy span {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.bank-section {
+  padding-top: 2rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.page-status {
+  margin: 1.25rem 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.bank-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line-strong);
+  list-style: none;
+}
+
+.bank-item {
+  min-width: 0;
+  animation: reveal 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--order, 0) * 55ms);
+}
+
+.bank-card {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr) 2rem;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 6.75rem;
+  padding: 1.125rem 0;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  transition:
+    padding 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 100ms ease;
+}
+
+a.bank-card:hover {
+  padding-inline: 0.75rem;
+  color: var(--accent);
+  background: rgba(239, 226, 221, 0.45);
+}
+
+a.bank-card:active {
+  transform: scale(0.99);
+}
+
+a.bank-card:focus-visible {
+  padding-inline: 0.75rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.bank-number {
+  align-self: start;
+  padding-top: 0.2rem;
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+}
+
+.bank-copy {
+  display: grid;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.bank-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bank-name {
+  min-width: 0;
+  font-family: "Songti SC", STSong, SimSun, serif;
+  font-size: clamp(1.3rem, 6vw, 1.65rem);
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: pretty;
+}
+
+.bank-badge {
+  flex: 0 0 auto;
+  padding: 0.15rem 0.4rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.bank-description {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.bank-arrow {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  color: var(--accent);
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 0.875rem;
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a.bank-card:hover .bank-arrow,
+a.bank-card:focus-visible .bank-arrow {
+  transform: translateX(0.2rem);
+}
+
+.bank-card.is-disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.68;
+}
+
+.bank-card.is-disabled .bank-arrow {
+  color: var(--muted);
+  border-style: dashed;
+}
+
+.skeleton {
+  height: 6.75rem;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(23, 48, 45, 0.055) 45%,
+    transparent 80%
+  );
+  background-size: 220% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+
+.state-card {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding: 1.25rem;
+  background: var(--paper-deep);
+  border: 1px dashed var(--line-strong);
+}
+
+.state-card strong {
+  font-family: "Songti SC", STSong, SimSun, serif;
+}
+
+.state-card span {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.state-card--error {
+  color: var(--error);
+  background: #f5e9e5;
+  border-color: rgba(138, 48, 40, 0.45);
+}
+
+.notice {
+  display: grid;
+  grid-template-columns: 1.75rem minmax(0, 1fr);
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.notice-index {
+  display: grid;
+  width: 1.25rem;
+  height: 1.25rem;
+  place-items: center;
+  color: var(--paper);
+  background: var(--ink);
+  border-radius: 50%;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.notice h2 {
+  margin-bottom: 0.4rem;
+}
+
+.notice p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.site-footer {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 0.6875rem;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.noscript-message {
+  position: fixed;
+  inset: auto 1rem 1rem;
+  z-index: 10;
+  margin: 0;
+  padding: 0.875rem 1rem;
+  color: #fff;
+  background: var(--error);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -220% 0;
+  }
+}
+
+@media (min-width: 43rem) {
+  body {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .page-shell {
+    min-height: auto;
+    padding: 3rem 3.25rem 2rem;
+    border: 1px solid rgba(23, 48, 45, 0.12);
+    box-shadow: var(--shadow);
+  }
+}
+
+@media (max-width: 23rem) {
+  .page-shell {
+    padding-inline: 1rem;
+  }
+
+  .bank-card {
+    grid-template-columns: 1.5rem minmax(0, 1fr) 1.75rem;
+    gap: 0.5rem;
+  }
+
+  .bank-arrow {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

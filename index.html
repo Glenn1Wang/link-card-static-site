@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      id="meta-description"
+      name="description"
+      content="移动端银行开户链接导航"
+    />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <title>银行开户链接</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="masthead" aria-labelledby="page-title">
+        <div class="brand-line" aria-hidden="true">
+          <span class="brand-mark">BA</span>
+          <span id="page-eyebrow" class="eyebrow">BANK ACCESS · 专属服务</span>
+        </div>
+        <h1 id="page-title">银行开户链接</h1>
+        <p id="page-description" class="intro">
+          选择您希望办理业务的银行，进入对应的专属邀请页面。
+        </p>
+
+        <div id="adviser-card" class="adviser-card" hidden>
+          <span id="adviser-label" class="adviser-label"></span>
+          <div class="adviser-copy">
+            <strong id="adviser-name"></strong>
+            <span id="adviser-title"></span>
+          </div>
+        </div>
+      </header>
+
+      <section class="bank-section" aria-labelledby="section-title">
+        <div class="section-heading">
+          <h2 id="section-title">选择开户银行</h2>
+          <span id="link-count" class="count" aria-live="polite"></span>
+        </div>
+
+        <p id="page-status" class="page-status" role="status">正在读取银行配置…</p>
+        <ol id="bank-list" class="bank-list" aria-busy="true">
+          <li class="skeleton" aria-hidden="true"></li>
+          <li class="skeleton" aria-hidden="true"></li>
+          <li class="skeleton" aria-hidden="true"></li>
+        </ol>
+
+        <div id="empty-state" class="state-card" hidden>
+          <strong>暂未配置银行</strong>
+          <span>请在 config.json 的 links 数组中添加银行信息。</span>
+        </div>
+
+        <div id="error-state" class="state-card state-card--error" role="alert" hidden>
+          <strong>配置加载失败</strong>
+          <span>请确认 config.json 存在且格式正确，然后刷新页面。</span>
+        </div>
+      </section>
+
+      <aside id="notice" class="notice" aria-labelledby="notice-title" hidden>
+        <span class="notice-index" aria-hidden="true">i</span>
+        <div>
+          <h2 id="notice-title"></h2>
+          <p id="notice-copy"></p>
+        </div>
+      </aside>
+
+      <footer id="site-footer" class="site-footer"></footer>
+    </main>
+
+    <template id="bank-template">
+      <li class="bank-item">
+        <a class="bank-card">
+          <span class="bank-number" aria-hidden="true"></span>
+          <span class="bank-copy">
+            <span class="bank-title-row">
+              <strong class="bank-name"></strong>
+              <span class="bank-badge" hidden></span>
+            </span>
+            <span class="bank-description"></span>
+            <span class="new-tab-label sr-only" hidden>在新标签页打开</span>
+          </span>
+          <span class="bank-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </template>
+
+    <noscript>
+      <p class="noscript-message">请启用 JavaScript，以读取银行链接配置。</p>
+    </noscript>
+  </body>
+</html>
